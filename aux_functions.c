@@ -25,7 +25,7 @@ int ant_check(char anterior, char actual, va_list ar)
                 cars = per_validation(actual, ar);
         } else
         {
-                //cars = bs_validation(actual, ar);
+                /*cars = bs_validation(actual, ar);*/
         }
 
         return (cars);

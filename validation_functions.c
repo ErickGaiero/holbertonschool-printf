@@ -23,7 +23,8 @@ int per_validation(char actual, va_list ar)
 			car_aux = va_arg(ar, int);
 			if (car_aux)
 				cars = _putchar(car_aux);
-
+			else
+				cars = _putchar(0);
 			break;
 
 		case 's':

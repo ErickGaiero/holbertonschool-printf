@@ -12,26 +12,6 @@ int _putchar(char c)
 }
 
 /**
- *  ant_check - check previous character
- *  @anterior: previous char
- *  @actual: actual char
- *  @ar: list of arguments
- *  */
-int ant_check(char anterior, char actual, va_list ar)
-{
-        int cars = 0;
-        if (anterior == '%')
-        {
-                cars = per_validation(actual, ar);
-        } else
-        {
-                /*cars = bs_validation(actual, ar);*/
-        }
-
-        return (cars);
-}
-
-/**
  * print_str - print a string
  *@str: string
  *Return: number of printed characters

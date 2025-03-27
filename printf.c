@@ -9,21 +9,27 @@ int _printf(const char *format, ...)
 	unsigned int cars = 0; /* Cantidad de caracteres impresos*/
 	int cont = 0; /* contador while*/
 	va_list ar; /*lista de argumentos*/
-	char actual, anterior; /*Caracter actual y anterior*/
+	char actual, siguiente; /*Caracter actual y anterior*/
 
 	va_start(ar, format);
-	while (format && format[cont])
+	if (!format)
+		return (-1);
+	while (format[cont])
 	{
 		actual = format[cont];
-		if (actual != '%' && actual != '\\' && !anterior)
+		if (actual != '%')
 		{
 			cars += _putchar(actual);
-		} else if (!anterior)
+		} else
 		{
-			anterior = actual;
-		} else {
-			cars += ant_check(anterior, actual, ar);
-			anterior = 0;
+			siguiente = format[cont + 1];
+			if (format[cont + 1])
+			{
+				cars += per_validation(siguiente, ar);
+				cont++;
+			}
+			else
+				return (-1);
 		}
 		cont++;
 	}

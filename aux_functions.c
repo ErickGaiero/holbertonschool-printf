@@ -39,13 +39,18 @@ void rev_string(char *s)
 /**
  * print_str - print a string
  *@str: string
+ *@rev: is reversed string?
  *Return: number of printed characters
  */
 
-int print_str(char *str)
+int print_str(char *str, char rev)
 {
 	int n = 0;
 
+	if (!str)
+		str = "(null)";
+	if (rev)
+		rev_string(str);
 	while (str[n] != 0)
 	{
 		_putchar(str[n]);
@@ -64,7 +69,7 @@ int print_int(int num)
 	int cars = 0, cont = 0, aux = 0;
 	char itos[13];
 	int is_negative = 0;
-	
+
 	if (num == 0)
 		return (_putchar('0'));
 	if (num == INT_MIN)
@@ -79,9 +84,9 @@ int print_int(int num)
 		num = -num;
 		is_negative = 1;
 		(void)aux;
-	} else 
+	} else
 		(void)aux;
-	
+
 	while (num % 10 > 0 || num / 10 > 0)
 	{
 		itos[cont] = (num % 10) + '0';
@@ -93,7 +98,7 @@ int print_int(int num)
 	itos[cont] = 0;
 	rev_string(itos);
 	itos[cont] = 0;
-	cars = print_str(itos);
+	cars = print_str(itos, 0);
 
 	return (cars);
 

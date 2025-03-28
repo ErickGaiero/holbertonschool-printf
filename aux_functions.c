@@ -61,19 +61,27 @@ int print_str(char *str)
  */
 int print_int(int num)
 {
-	int cars = 0, cont = 0;
-	char itos[12];
+	int cars = 0, cont = 0, aux = 0;
+	char itos[13];
 	int is_negative = 0;
-
+	
 	if (num == 0)
 		return (_putchar('0'));
-
-	if (num < 0)
+	if (num == INT_MIN)
+	{
+		num = -(INT_MIN / 10);
+		aux = -(INT_MIN % 10);
+		itos[cont++] = aux + '0';
+		is_negative = 1;
+	}
+	else if (num < 0)
 	{
 		num = -num;
 		is_negative = 1;
-	}
-
+		(void)aux;
+	} else 
+		(void)aux;
+	
 	while (num % 10 > 0 || num / 10 > 0)
 	{
 		itos[cont] = (num % 10) + '0';

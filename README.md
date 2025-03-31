@@ -75,8 +75,6 @@ int main(void)
 Cadena: Texto de ejemplo
 Número: 12345
 Carácter: X
-Número en hexadecimal: 3039
-Número en binario: 11000000111001
 Cadena invertida: olpmeje ed otxeT
 Símbolo de porcentaje: %
 ```

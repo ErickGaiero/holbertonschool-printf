@@ -26,17 +26,13 @@ int per_validation(char actual, va_list ar)
 		case 's':
 			(void) car_aux;
 			str_aux = va_arg(ar, char*);
-			cars = print_str(str_aux, 0);
+			cars = print_str(str_aux);
 			break;
 		case 'i':
 			cars = print_int(va_arg(ar, int));
 			break;
 		case 'd':
 			cars = print_int(va_arg(ar, int));
-			break;
-		case 'r':
-			str_aux = va_arg(ar, char*);
-			cars = print_str(str_aux, 1);
 			break;
 		default:
 			cars += _putchar('%');

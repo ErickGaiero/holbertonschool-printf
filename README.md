@@ -24,8 +24,7 @@ Devuelve la cantidad total de caracteres impresos, excluyendo el carácter nulo.
 
 | Función | Descripción |
 |---------|------------|
-| `void rev_string(char *s);` | Invierte una cadena de caracteres |
-| `int print_str(char *str, char rev);` | Imprime una cadena y la invierte |
+| `int print_str(char *str, char rev);` | Imprime una cadena y la invierte si es requerido |
 | `int print_int(int num);` | Imprime un número entero |
 | `int _printf(const char *format, ...);` | Función principal que imita `printf()` |
 | `int per_validation(char actual, va_list ar);` | Valida el carácter de formato y ejecuta la función correspondiente |
@@ -38,15 +37,8 @@ Devuelve la cantidad total de caracteres impresos, excluyendo el carácter nulo.
 | `%s` | Imprime una cadena de caracteres |
 | `%d` | Imprime un número decimal |
 | `%i` | Imprime un número entero |
-| `%r` | Imprime una cadena en orden inverso |
 | `%%` | Imprime el carácter `%` |
 
-## Cómo compilar y ejecutar
-
-```sh
-gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c -o main.c
-./a.out
-```
 
 ## Ejemplo de uso
 
@@ -62,7 +54,6 @@ int main(void)
     _printf("Cadena: %s\n", str);
     _printf("Número: %d\n", num);
     _printf("Carácter: %c\n", ch);
-    _printf("Cadena invertida: %r\n", str);
     _printf("Símbolo de porcentaje: %%\n");
     
     return (0);
@@ -75,7 +66,6 @@ int main(void)
 Cadena: Texto de ejemplo
 Número: 12345
 Carácter: X
-Cadena invertida: olpmeje ed otxeT
 Símbolo de porcentaje: %
 ```
 
